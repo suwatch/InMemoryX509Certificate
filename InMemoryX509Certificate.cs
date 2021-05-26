@@ -68,7 +68,7 @@ namespace InMemoryX509Certificate
 
         private static uint MapKeyStorageFlags(X509KeyStorageFlags keyStorageFlags)
         {
-            if (keyStorageFlags == (keyStorageFlags & X509KeyStorageFlags.PersistKeySet))
+            if (X509KeyStorageFlags.PersistKeySet == (keyStorageFlags & X509KeyStorageFlags.PersistKeySet))
             {
                 throw new ArgumentException("X509KeyStorageFlags.PersistKeySet is not supported for InMemoryX509Certificate");
             }
